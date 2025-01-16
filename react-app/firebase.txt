@@ -1,3 +1,6 @@
+//firebase_documentation
+https://firebase.google.com/docs/guides?hl=en&authuser=0
+
 //Install_firebase
 npm install firebase
 
@@ -30,3 +33,15 @@ https://firebase.google.com/docs/web/learn-more?hl=en&authuser=0#modular-version
 
 Get Started
 https://firebase.google.com/docs/web/setup?hl=en&authuser=0
+
+//install_firebase_CLI
+npm install -g firebase-tools
+
+//sign-in_to_google
+firebase login
+
+//initiate_your_project
+firebase init
+
+//deploy_your_project
+firebase deploy
