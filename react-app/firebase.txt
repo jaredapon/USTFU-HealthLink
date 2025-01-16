@@ -1,0 +1,32 @@
+//Install_firebase
+npm install firebase
+
+
+//Initialize_firebase
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBhlrI1dmkfKr5ezz_BEVxvYz-c3l0eyco",
+  authDomain: "ustfu-healthlink.firebaseapp.com",
+  projectId: "ustfu-healthlink",
+  storageBucket: "ustfu-healthlink.firebasestorage.app",
+  messagingSenderId: "548072829284",
+  appId: "1:548072829284:web:b13f0894ca808005534a71",
+  measurementId: "G-MBFN9CRYQC"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+//Modular_JS_SDK
+https://firebase.google.com/docs/web/learn-more?hl=en&authuser=0#modular-version
+
+Get Started
+https://firebase.google.com/docs/web/setup?hl=en&authuser=0
