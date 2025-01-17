@@ -38,7 +38,6 @@
   padding: 20px;
 }
 
-
 .profile-section {
   display: flex;
   align-items: center;
@@ -73,6 +72,7 @@
 .sidebar-menu li {
   padding: 10px 0;
   cursor: pointer;
+  font-size: 12px; /* Smaller text size */
 }
 
 .sidebar-menu li.active {
@@ -80,6 +80,7 @@
   color: #ffc107;
   text-decoration: underline;
   text-decoration-color: white; /* Add white underline */
+  text-underline-offset: 4px; /* Add space from the underline */
 }
 
 .sidebar-menu li:hover {
