@@ -29,6 +29,7 @@ const Sidebar: React.FC = () => {
             </div>
           </div>
 
+
           {/* Navigation Menu */}
           <ul className="sidebar-menu">
             <li className="active">Hospitalization Application</li>
