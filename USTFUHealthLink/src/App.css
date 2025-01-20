@@ -1,0 +1,31 @@
+.base-container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  text-align: center;
+  padding-top: 10vh; /* Add padding to account for fixed header */
+  background-color: beige;
+}
+
+
+.app-container {
+  display: fixed;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  background: url('./assets/ust.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+}
+ 
+
+.welcome-section {
+  text-align: center;
+  margin: 20px 0;
+}
