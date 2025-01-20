@@ -32,11 +32,11 @@ const Sidebar: React.FC = () => {
 
           {/* Navigation Menu */}
           <ul className="sidebar-menu">
-            <li className="active">HOSPITALIZATION APPLICATION</li>
-            <li>HOSPITALIZATION TRACKING</li>
+            <li className="active">Hospitalization Application</li>
+            <li>Hospitalization Tracking</li>
             <li>FAQ</li>
-            <li>SETTINGS</li>
-            <li>LOGOUT</li>
+            <li>Settings</li>
+            <li>Logout</li>
           </ul>
         </div>
       )}
