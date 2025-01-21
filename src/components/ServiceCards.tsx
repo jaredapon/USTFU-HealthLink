@@ -1,11 +1,10 @@
-import React from "react";
-import "./ServiceCards.css";
+import "../css/ServiceCards.css";
 import inpatientIcon from "../assets/inpatient.png";
 import admissionIcon from "../assets/admission.png";
 import outpatientIcon from "../assets/outpatient.png";
 import eyeglassesIcon from "../assets/eyeglasses.png";
 
-const ServiceCards: React.FC = () => {
+const ServiceCards = () => {
 	const cards = [
 		{ title: "Inpatient Application Form", icon: inpatientIcon },
 		{ title: "Admission Application Form", icon: admissionIcon },

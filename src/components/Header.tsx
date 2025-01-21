@@ -1,7 +1,6 @@
-import React from  "react";
-import "./Header.css";
+import "../css/Header.css";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className="Header">
       <h1>USTFU HealthLink</h1>

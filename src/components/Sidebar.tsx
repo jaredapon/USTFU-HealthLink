@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
+import { useState } from "react";
+import "../css/Sidebar.css";
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {

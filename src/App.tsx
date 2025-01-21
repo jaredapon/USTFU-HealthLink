@@ -1,10 +1,9 @@
-import React from "react";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import ServiceCards from "./components/ServiceCards";
 import "./App.css";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="BaseContainer">
       <Header />
