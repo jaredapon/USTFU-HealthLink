@@ -1,0 +1,26 @@
+.form-header {
+    background-color: #EDEDED;
+    color:black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 5px;
+}
+
+.header-text h1, .header-text h2, .header-text h3 {
+    margin: 5px 0;
+}
