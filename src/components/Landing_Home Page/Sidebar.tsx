@@ -1,26 +1,33 @@
 import { useState } from "react";
 import Profile from "./Profile";
 import "./Sidebar.css";
-import hospitalizationIcon from "../../assets/application.png";
-import trackingIcon from "../../assets/tracking.png";
-import faqIcon from "../../assets/faq.png";
-import settingsIcon from "../../assets/settings.png";
-import logoutIcon from "../../assets/logout.png";
 
-const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {
+import { TbHomeEdit } from "react-icons/tb";
+import { MdHistory } from "react-icons/md";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { RiSettings5Line } from "react-icons/ri";
+import { TbLogout } from "react-icons/tb";
+
+const Sidebar = ({
+	isOpen,
+	toggleSidebar,
+}: {
+	isOpen: boolean;
+	toggleSidebar: () => void;
+}) => {
 	const [activeItem, setActiveItem] = useState("HOSPITALIZATION APPLICATION");
 
 	const menuItems = [
-		{ name: "HOSPITALIZATION APPLICATION", icon: hospitalizationIcon },
-		{ name: "HOSPITALIZATION TRACKING", icon: trackingIcon },
-		{ name: "FAQ", icon: faqIcon },
-		{ name: "SETTINGS", icon: settingsIcon },
-		{ name: "LOGOUT", icon: logoutIcon },
+		{ name: "HOSPITALIZATION APPLICATION", icon: <TbHomeEdit size={18} /> },
+		{ name: "HOSPITALIZATION TRACKING", icon: <MdHistory size={18} /> },
+		{ name: "FAQ", icon: <AiOutlineQuestionCircle size={18} /> },
+		{ name: "SETTINGS", icon: <RiSettings5Line size={18} /> },
+		{ name: "LOGOUT", icon: <TbLogout size={18} /> },
 	];
 
 	return (
 		<div className={`Sidebar ${isOpen ? "open" : "collapsed"}`}>
-			<div className="Profile"> 
+			<div className="Profile">
 				<Profile />
 			</div>
 			<button className="toggle-btn" onClick={toggleSidebar}>
@@ -33,7 +40,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: ()
 						className={activeItem === item.name ? "active" : ""}
 						onClick={() => setActiveItem(item.name)}
 					>
-						<img src={item.icon} alt={item.name} className="menu-icon" />
+						<span className="menu-icon">{item.icon}</span>
 						{item.name}
 					</li>
 				))}
