@@ -21,7 +21,7 @@ const FormHeader = ({ formType }: FormHeaderProps) => {
 				<h1>{formType}</h1>
 			</div>
 			<img
-				id="USTFU-logo"
+				id="UST-logo"
 				src={USTLogo}
 				alt="UST Logo"
 				className="logo"
