@@ -1,5 +1,5 @@
 /* Sidebar.css */
-.sidebar {
+.Sidebar {
   background-color: #1f1f1f;
   color: white;
   height: 100vh;
@@ -7,24 +7,29 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  overflow-y: auto;
 }
 
-.sidebar.closed {
+.Sidebar.collapsed{
   transform: translateX(-100%);
-  width: 0;
+  /* width: 0; */
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
 
+.Sidebar .toggle-btn {
+  display: none;
+}
+
 .toggle-btn {
   background-color: #ffc107;
   color: black;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -38,74 +43,71 @@
   padding: 20px;
 }
 
-.profile-section {
+.Profile {
+  width: 100%;
+  height: 100px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 20px;
+  /* background-color: rgb(145, 77, 164); */
 }
 
-.profile-image img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.profile-name {
-  margin-left: 10px;
-}
-
-.profile-name p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.profile-name small {
-  color: #ccc;
-}
-
-.sidebar-menu {
+.SidebarMenu {
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 
-.sidebar-menu li {
+.SidebarMenu li {
+  display: flex;
+  align-items: center;
   padding: 10px 0;
   cursor: pointer;
-  font-size: 12px; /* Smaller text size */
+  font-size: 12px; 
 }
 
-.sidebar-menu li.active {
-  font-weight: bold;
+.SidebarMenu li .menu-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.SidebarMenu li.active {
+  /* font-weight: bold; */
   color: #ffc107;
   text-decoration: underline;
-  text-decoration-color: white; /* Add white underline */
-  text-underline-offset: 4px; /* Add space from the underline */
+  text-decoration-color: white; 
+  text-underline-offset: 6px;
 }
 
-.sidebar-menu li:hover {
+.SidebarMenu li:hover {
   color: #ffc107;
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    height: 100vh;
+  .Sidebar {
+    position: absolute;
+    z-index: 1000;
+    /* height: 100vh; */
   }
 
-  .sidebar.closed {
+  .Sidebar.closed {
     transform: translateX(-100%);
   }
 
-  .toggle-btn {
-    position: fixed;
+  .Sidebar .toggle-btn {
+    display: block;
+    position: absolute;
     top: 10px;
-    left: 10px;
-    z-index: 2000;
+    right: -50px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
   }
 }
 
 @media (min-width: 900px) {
-  .sidebar {
+  .Sidebar {
     transform: translateX(0);
   }
 

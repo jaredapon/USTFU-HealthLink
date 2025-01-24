@@ -1,4 +1,4 @@
-import "../css/ServiceCards.css";
+import "./components/Landing_Home Page/ServiceCards.css";
 import inpatientIcon from "../assets/inpatient.png";
 import admissionIcon from "../assets/admission.png";
 import outpatientIcon from "../assets/outpatient.png";

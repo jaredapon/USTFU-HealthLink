@@ -1,47 +1,43 @@
 import { useState } from "react";
+import Profile from "./Profile";
 import "./Sidebar.css";
+import hospitalizationIcon from "../../assets/application.png";
+import trackingIcon from "../../assets/tracking.png";
+import faqIcon from "../../assets/faq.png";
+import settingsIcon from "../../assets/settings.png";
+import logoutIcon from "../../assets/logout.png";
 
-const Sidebar = () => {
-	const [isOpen, setIsOpen] = useState(true);
+const Sidebar = ({ isOpen, toggleSidebar }: { isOpen: boolean; toggleSidebar: () => void }) => {
+	const [activeItem, setActiveItem] = useState("HOSPITALIZATION APPLICATION");
 
-	const toggleSidebar = () => {
-		setIsOpen(!isOpen);
-	};
+	const menuItems = [
+		{ name: "HOSPITALIZATION APPLICATION", icon: hospitalizationIcon },
+		{ name: "HOSPITALIZATION TRACKING", icon: trackingIcon },
+		{ name: "FAQ", icon: faqIcon },
+		{ name: "SETTINGS", icon: settingsIcon },
+		{ name: "LOGOUT", icon: logoutIcon },
+	];
 
 	return (
-		<div className={`sidebar ${isOpen ? "open" : "closed"}`}>
-			{/* Toggle Button */}
+		<div className={`Sidebar ${isOpen ? "open" : "collapsed"}`}>
+			<div className="Profile"> 
+				<Profile />
+			</div>
 			<button className="toggle-btn" onClick={toggleSidebar}>
-				{isOpen ? "Hide" : "Show"}
+				{isOpen ? "Close" : "Menu"}
 			</button>
-
-			{/* Sidebar Content */}
-			{isOpen && (
-				<div className="sidebar-content">
-					{/* Profile Section */}
-					<div className="profile-section">
-						<div className="profile-image">
-							<img
-								src="https://via.placeholder.com/50"
-								alt="Profile"
-							/>
-						</div>
-						<div className="profile-name">
-							<p>Jeon Jungkook</p>
-							<small>Member</small>
-						</div>
-					</div>
-
-					{/* Navigation Menu */}
-					<ul className="sidebar-menu">
-						<li className="active">HOSPITALIZATION APPLICATION</li>
-						<li>HOSPITALIZATION TRACKING</li>
-						<li>FAQ</li>
-						<li>SETTINGS</li>
-						<li>LOGOUT</li>
-					</ul>
-				</div>
-			)}
+			<ul className="SidebarMenu">
+				{menuItems.map((item) => (
+					<li
+						key={item.name}
+						className={activeItem === item.name ? "active" : ""}
+						onClick={() => setActiveItem(item.name)}
+					>
+						<img src={item.icon} alt={item.name} className="menu-icon" />
+						{item.name}
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };

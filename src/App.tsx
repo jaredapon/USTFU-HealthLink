@@ -1,28 +1,30 @@
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import ServiceCards from "./components/ServiceCards";
-import "./App.css";
-import Profile from "./components/Profile";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useState } from "react";
+import Header from "./components/Landing_Home Page/Header";
+import Sidebar from "./components/Landing_Home Page/Sidebar";
+import MainContainer from "./components/Landing_Home Page/MainContainer";
+import "./App.css";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="BaseContainer">
-      <Header />
-      <Profile />
-      <Sidebar />
-      <div className="AppContainer">
-        <div className="MainContent">
-          <div className="WelcomeSection">
-            <h2>Welcome to USTFU HealthLink</h2>
-            <p>Choose your service application below</p>
-          </div>
-          <ServiceCards />
-        </div>
-      </div>
-    </div>
-  );
+		<div className="App">
+			<Header />
+			
+			<Router>
+				<div className="Layout">
+					<Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+					<MainContainer isSidebarOpen={isSidebarOpen} />
+				</div>
+			</Router>
+		</div>
+	);
 };
 
 export default App;

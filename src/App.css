@@ -1,31 +1,17 @@
-.base-container {
-  min-width: 100vw;
-  min-height: 100vh;
+.App {
   display: flex;
-  justify-content: right;
-  align-items: center;
-  text-align: center;
-  padding-top: 10vh; /* Add padding to account for fixed header */
-  background-color: beige;
-}
-
-
-.app-container {
-  display: fixed;
+  flex-direction: column;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-.main-content {
+.Layout {
+  display: flex;
   flex: 1;
-  background: url('./assets/ust.png') no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 20px;
+  overflow: hidden;
 }
- 
 
-.welcome-section {
-  text-align: center;
-  margin: 20px 0;
+header {
+  flex-shrink: 0;
+  height: 60px;
 }
